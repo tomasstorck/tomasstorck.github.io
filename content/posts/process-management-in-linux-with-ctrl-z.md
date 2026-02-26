@@ -25,7 +25,7 @@ For example, when running `python` and pressing <kbd>Ctrl</kbd> + <kbd>z</kbd>, 
     <span data-ty data-ty-delay="100">[1]+  Stopped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python</span>
     <span data-ty="input" data-ty-delay="3000">
 </div>
-<script src="/termynal.min.js" data-termynal-container="#termynal"></script>
+<script src="/termynal.js" data-termynal-container="#termynal"></script>
 
 So, how does that help you?
 
