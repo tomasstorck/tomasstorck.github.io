@@ -1,0 +1,8 @@
+kbd {
+    background-color: #ccc;
+    border-radius: 0.2em;
+    padding: .1em .3em;
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: inset 0px 0px 1px;
+}
