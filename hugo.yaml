@@ -22,10 +22,10 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: ExampleSite
   description: "ExampleSite description"
-  keywords: [blog, scientific, software]
-  author: Tomas
+  keywords: [blog, scientific, software, linux, bash]
+  author: Tomas Storck
   DateFormat: "2 January 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: auto
   disableThemeToggle: false
   ShowReadingTime: true
   ShowShareButtons: false
@@ -55,9 +55,9 @@ params:
 
   socialIcons:
     - name: linkedin
-      url: "https://linkedin.com/tomasstorck"
-    - name: github
       url: "https://www.linkedin.com/in/tomasstorck/"
+    - name: github
+      url: "https://github.com/tomasstorck"
     - name: stackoverflow
       url: "https://stackoverflow.com/users/1580660/tomas"
 
