@@ -22,14 +22,14 @@ For example, when running `python` and pressing <kbd>Ctrl</kbd> + <kbd>z</kbd>, 
     <span data-ty="input">python</span>
     <span data-ty>Python 3.14.3 (main, Feb 13 2026, 15:31:44)</span>
     <span data-ty="input" data-ty-prompt=">>>"> # Pressing Ctrl + z now...</span>
-    <span data-ty data-ty-delay="100">[1]+  Stopped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python</span>
+    <span data-ty data-ty-delay="100">[1]+&nbsp;&nbsp;Stopped&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;python</span>
     <span data-ty="input" data-ty-delay="3000">
 </div>
 <script src="/termynal.js" data-termynal-container="#termynal"></script>
 
 So, how does that help you?
 
-## Switching between processes
+## Switching between processes with `fg`
 
 The first use case is but a single step away: pressing <kbd>Ctrl</kbd> + <kbd>z</kbd> puts you back at the terminal, at which point you can run any command. The next step is to **switch back to the process you suspended** using the command **`fg`** (for foreground).
 
@@ -38,9 +38,9 @@ An example of when this method is useful is when you are writing a script and fr
 1. Make changes and save the script
 1. Press <kbd>Ctrl</kbd> + <kbd>z</kbd> to go back to the terminal
 1. Run your freshly updated script
-1. **Type `fg`** and press <kbd>Enter</kbd> to **return to `vim`**
+1. **Type `fg`** and press <kbd>Enter</kbd> to **return to the suspended process** (`vim`)
 
-## Killing an unresponsive process
+## Killing an unresponsive process with `kill %1`
 
 When aborting a script, <kbd>Ctrl</kbd> + <kbd>c</kbd> (technical name: `SIGINT`) is by far the most common keystroke used. It's quick and does the job, usually. Except when it does not. When the going gets tough and <kbd>Ctrl</kbd> + <kbd>c</kbd> is unable to terminate a process, its neighbour from two doors down still might.
 
@@ -52,17 +52,17 @@ An example use case is when using the tool Miniterm to communicate with an Ardui
 1. Type `kill %1` followed by <kbd>Enter</kbd> to tell send the signal to Miniterm to terminate
 
 > [!TIP]
-> If `kill %1` does not terminate the process, the terminate signal is still being too gentle. Try `kill -9 %1` for the scorched earth approach.
+> If `kill %1` does not terminate the process, a terminate signal is still too gentle. Try `kill -9 %1` for the scorched earth approach usinsg the kill signal.
 
-Be aware that so far we have been assuming that the job ID is 1 (hence `%1`). If multiple jobs exist, the index can change as well, for example:
+Be aware that so far we have been assuming that the job ID is 1 (hence `%1`). If multiple jobs exist, the index can change as well. For example note the `[2]` in the stopped process below:
 
 ```
 [2]+  Stopped                    uv run python -m serial.tools.miniterm
 ```
 
-In this case, use `%2` instead.
+In this case, use `kill %2` instead.
 
-## Bonus: continuing a process in the background
+## Bonus: running a process in the background
 
 This last tip is a bit of a cheat: where `fg` puts a suspended process in the foreground, **`bg`** puts it in the **background**. It will, however, continue to generate output and thereby usually makes a big mess of the terminal, which is the reason I personally never use this.
 
