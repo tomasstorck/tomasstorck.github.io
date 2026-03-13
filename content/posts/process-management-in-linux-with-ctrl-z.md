@@ -1,5 +1,6 @@
 ---
 date: "2026-02-26"
+lastmod: "2026-03-13"
 title: "Process management in the terminal with Ctrl + z"
 categories: ["software"]
 tags: ["bash", "terminal", "linux"]
